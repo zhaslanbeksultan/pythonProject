@@ -5,7 +5,7 @@ print("Hello, World!")
 if 3 > 2:
   print("Yahoo!!!")
 
-# Python_Variables///////////////////////////////////////////////////////////////////////////////////////////////////////
+#Python_Variables///////////////////////////////////////////////////////////////////////////////////////////////////////
 x, y, z = "O", "a", "e"
 print(x)
 print(y)
@@ -57,7 +57,7 @@ myfunc()
 
 print("Python is " + x)
 
-# Data Types//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Data Types//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 word = "abcdefghijklmnopqrstuvwxyz"
 print(type(word))
 wow = 26526j
@@ -66,7 +66,7 @@ bb = bytes(56)
 print(type(bb))
 print(bb)
 
-# Numbers////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Numbers////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 x = -51313133131313265122222222222222222222222222222222222222222222222222222222222222222222222222222222
 print(x)
 x = 35e3
@@ -85,13 +85,13 @@ print(type(x), type(a))
 import random
 print(random.randrange(1, 9))
 
-# Casting////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Casting////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 x = int(1)
 y = int(2.8544)
 z = float("3.5")
 print(x, y, z)
 
-# Strings////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Strings////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 print("Hello")
 print('Hello')
 
@@ -435,3 +435,170 @@ set1 = {"a", "b" , "c"}
 set2 = {1, 2, 3}
 set1.update(set2)
 print(set1)
+
+#Dictionaries///////////////////////////////////////////////////////////////////////////////////////////////////////////
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 1965
+}
+print(thisdict["year"])
+print(len(thisdict))
+
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+x = thisdict["colors"]
+x = thisdict.keys()
+print(x)
+print(thisdict)
+print(type(thisdict))
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.values()
+print(x)
+x = thisdict.items()
+print(x)
+
+x = car.keys()
+print(x)
+car["color"] = "white"
+print(x)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "model" in thisdict:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 2020})
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.popitem()
+print(thisdict)
+
+for x in thisdict:
+  print(x)
+for x in thisdict:
+  print(thisdict[x])
+
+for x, y in thisdict.items():
+  print(x, y)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = thisdict.copy()
+print(mydict)
+
+mydict = dict(thisdict)
+print(mydict)
+
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+print(myfamily)
+
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+
+#If ...Else/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+
+a = 33
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+
+if a > b: print("a is greater than b")
+a = 2
+b = 330
+print("A") if a>b else print("B")
+a=50
+b=50
+print("A") if a>b else print("B") if a<b else print("=")
+
+a = 33
+b = 200
+if b > a:
+  pass
