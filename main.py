@@ -178,4 +178,143 @@ print(text)
 
 #Booleans///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 print (10>9)
-print(10>5)
+
+if(10>5):
+    print("Ten is bigger than five")
+
+print(bool("Hello"))
+print(bool(0))
+
+def myFunction() :
+  return True
+
+print(myFunction())
+
+def myFunction() :
+  return True
+
+if myFunction():
+  print("YES!")
+else:
+  print("NO!")
+
+#Operators//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+print(10 / 4)
+print(10 // 4)
+print(not(10>5 and 10<51))
+a, b= 4, 5
+print(a is b)
+
+#Lists//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+list = ["apple", "banana", "cherry"]
+print(list)
+
+thislist = ["apple", "banana", "cherry"]
+print(len(thislist))
+
+mylist = ["apple", "banana", "cherry"]
+print(type(mylist))
+
+thislist = ["apple", "banana", "cherry"]
+print(thislist[-2:-1])
+
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[:4])
+
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[2:])
+
+mylist=['a','b','c','d','e']
+if 'a' in mylist:
+    print("Yes, \"a\" is in this list")
+mylist[2:4]="sdf","adv"
+print(mylist)
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1:2] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1:3] = ["watermelon"]
+print(thislist)
+
+a=['c','cd']
+a.append("cdd")
+a.insert(1,'bbb')
+a.remove("cd")
+a.pop(2)
+print(a)
+a.clear()
+print(a)
+del a
+
+thislist = ["apple", "banana", "cherry"]
+for x in thislist:
+  print(x)
+
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+    print(thislist[i])
+
+i=0
+while i<len(thislist):
+    print(thislist[i])
+    i=i+1
+
+[print(x) for x in thislist]
+
+animals =["mouse","dick","dog"]
+danimals=[]
+for x in animals:
+    if "d" in x:
+        danimals.append(x)
+print(danimals)
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if "a" in x]
+print(newlist)
+nextlist=[i for i in fruits if i!="cherry"]
+print(nextlist)
+newlist1 = [x for x in range(10) if x < 5]
+print(newlist1)
+newlist2=[i.upper() for i in nextlist]
+print(newlist2)
+newlist3=["halo" for i in nextlist]
+print(newlist3)
+newlist4=[x if x!=0 else "zero" for x in newlist1]
+print(newlist4)
+
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse=True)
+print(thislist)
+thislist = [100, 50, 65, 82, 23]
+thislist.sort()
+print(thislist)
+
+def myfunc(n):
+  return abs(n - 50)
+def myfunc1(n):
+    return abs(n-82)
+thislist = [100, 50, 65, 82, 23]
+thislist1=[100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+thislist1.sort(key = myfunc1)
+print(thislist)
+print(thislist1)
+
+thislist = ["banana", "Orange", "Kiwi","Kawa","karavan","kawa", "cherry"]
+thislist.sort(key = str.lower)
+print(thislist)
+
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.reverse()
+print(thislist)
+
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+list2 = list1 + list2
+print(list2)
