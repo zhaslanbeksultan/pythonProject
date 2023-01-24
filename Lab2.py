@@ -442,3 +442,22 @@ for x in adj:
     print(x, y)
 for x in [0, 1, 2]:
   pass
+
+#Arrays/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+cars = ["Ford", "Volvo", "BMW"]
+x = cars[0]
+print(x)
+cars[0] = "Toyota"
+print(cars[0])
+x = len(cars)
+print(x)
+for x in cars:
+  print(x)
+
+cars.append("Honda")
+for x in cars:
+  print(x)
+cars.pop(1)
+cars.remove("Honda")
+for x in cars:
+  print(x)
