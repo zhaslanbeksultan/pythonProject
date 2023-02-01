@@ -1,45 +1,45 @@
 #Functions//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #1////////////////////////////////
-# def c_ounces (grams):
-#     print(28.3495231 * grams)
-# grams = float(input())
-# c_ounces(grams)
+def c_ounces (grams):
+    print(28.3495231 * grams)
+grams = float(input())
+c_ounces(grams)
 
 #2/////////////////////////////////
-# def c_centigrade (F):
-#     print((5 / 9) * (F-32))
-#
-#
-# F = float(input())
-# c_centigrade(F)
+def c_centigrade (F):
+    print((5 / 9) * (F-32))
+
+
+F = float(input())
+c_centigrade(F)
 
 #3/////////////////////////////////
-# def solve(numheads, numlegs):
-#     r = ((numlegs - (numheads * 2))*2)/4
-#     ch = numheads - r
-#     str1 = "Number of rabbits: " + str(r) + "\nNumber of chickens: " + str(ch)
-#     return str1
-#
-# numheads = 35
-# numlegs = 94
-# print(solve(numheads, numlegs))
+def solve(numheads, numlegs):
+    r = ((numlegs - (numheads * 2))*2)/4
+    ch = numheads - r
+    str1 = "Number of rabbits: " + str(r) + "\nNumber of chickens: " + str(ch)
+    return str1
+
+numheads = 35
+numlegs = 94
+print(solve(numheads, numlegs))
 
 #4/////////////////////////////////
 
-# def filter_prime(nums, list2):
-#     for i in nums:
-#         a = 0
-#         for j in range(2, i):
-#             if i // j == i / j:
-#                 a += 1
-#         if a < 1:
-#             list2.append(i)
-#
-#     if nums.index(i) == len(nums)-1:
-#         return list2
-# nums = list(map(int,input().split()))
-# list2 = []
-# print(filter_prime(nums, list2))
+def filter_prime(nums, list2):
+    for i in nums:
+        a = 0
+        for j in range(2, i):
+            if i // j == i / j:
+                a += 1
+        if a < 1:
+            list2.append(i)
+
+    if nums.index(i) == len(nums)-1:
+        return list2
+nums = list(map(int,input().split()))
+list2 = []
+print(filter_prime(nums, list2))
 
 
 #6/////////////////////////////////////////////////////////////////////////////////
@@ -115,3 +115,39 @@ if ans:
     print("Yes, palindrome")
 else:
     print("Not polindrome")
+
+#12/////////////////////////////////////////////
+def histogram(list1):
+    for i in list1:
+        print("*" * i)
+
+list1 = list(map(int, input().split(', ')))
+histogram(list1)
+
+#13//////////////////////////////////////////////////////////
+def f_guess(num, guess):
+    if guess < num:
+        print('Your guess is too low.')
+        return False
+    if guess > num:
+        print('Your guess is too high.')
+        return False
+    if guess == num:
+        return True
+
+import random
+t = 0
+print('Hello! What is your name?')
+name = input()
+num = random.randint(1, 20)
+print('Well, ' + name + ', I am thinking of a number between 1 and 20.')
+while True:
+    print('Take a guess.')
+    guess = input()
+    guess = int(guess)
+    t += 1
+    b = f_guess(num, guess)
+    if b == True:
+        print('Good job, ' + name + '! You guessed my number in ' + str(t) + ' guesses!')
+        break
+
