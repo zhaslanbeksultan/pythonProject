@@ -38,3 +38,22 @@ class Rectangle(Shape):
 
 Area = Rectangle(int(input("Введите длину прямоугольника: ")),int(input("Введите ширину прямоугольника: ")))
 print("Площадь прямоугольника: " + str(Area.area()))
+
+#5////////////////////////////
+class Account():
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    def deposit(self, dep):
+        self.balance += dep
+        print(f"{self.owner}, the operation was successful!\nYour balance is {self.balance}")
+    def withdraw(self, wit):
+        self.balance -= wit
+        print(f"{self.owner}, the operation was successful!\nYour balance is {self.balance}")
+print("Please, write your name and balance. Press 'enter' to continue...")
+own = Account(input("Account owner's name: "), int(input("Balance: ")))
+str1 = input("Write Withdraw or Deposit: ")
+if str1 == "Withdraw":
+    own.withdraw(int(input("Write the amount: ")))
+if str1 == "Deposit":
+    own.deposit(int(input("Write the amount: ")))
