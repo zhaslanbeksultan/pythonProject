@@ -41,6 +41,11 @@ nums = list(map(int,input().split()))
 list2 = []
 print(filter_prime(nums, list2))
 
+#5/////////////////////////
+import itertools
+abc = list(map(str, input("Write a string: ")))
+permutations = list(itertools.permutations(abc))
+print([''.join(permutation) for permutation in permutations])
 
 #6/////////////////////////////////////////////////////////////////////////////////
 def p(str1):
@@ -150,4 +155,3 @@ while True:
     if b == True:
         print('Good job, ' + name + '! You guessed my number in ' + str(t) + ' guesses!')
         break
-
