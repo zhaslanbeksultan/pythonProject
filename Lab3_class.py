@@ -107,3 +107,4 @@ class filt():
 list1 = list(map(int, input("Write a list of numbers: ").split()))
 obj = filt(list1)
 print(obj.is_prime())
+#The End
