@@ -1,4 +1,4 @@
-import pygame, random, sys ,os,time
+import pygame, random, sys ,os , time
 from pygame.locals import *
 
 WINDOWWIDTH = 800
@@ -62,7 +62,7 @@ car3 = pygame.image.load('image/car3.png')
 car4 = pygame.image.load('image/car4.png')
 playerRect = playerImage.get_rect()
 baddieImage = pygame.image.load('image/car2.png')
-sample = [car3,car4,baddieImage]
+sample = [car3, car4, baddieImage]
 wallLeft = pygame.image.load('image/left.png')
 wallRight = pygame.image.load('image/right.png')
 
@@ -74,12 +74,15 @@ pygame.display.update()
 waitForPlayerToPressKey()
 zero=0
 if not os.path.exists("data/save.dat"):
-    f=open("data/save.dat",'w')
+    f = open("data/save.dat", 'w')
     f.write(str(zero))
     f.close()   
-v=open("data/save.dat",'r')
+v=open("data/save.dat", 'r')
 topScore = int(v.readline())
 v.close()
+
+
+
 while (count>0):
     # start of the game
     baddies = []

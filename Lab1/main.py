@@ -1,11 +1,12 @@
-#Intro//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Intro//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import random
 print("Hello, World!")
 
-#Syntax/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Syntax/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if 3 > 2:
-  print("Yahoo!!!")
+    print("Yahoo!!!")
 
-#Python_Variables///////////////////////////////////////////////////////////////////////////////////////////////////////
+# Python_Variables///////////////////////////////////////////////////////////////////////////////////////////////////////
 x, y, z = "O", "a", "e"
 print(x)
 print(y)
@@ -57,7 +58,7 @@ myfunc()
 
 print("Python is " + x)
 
-#Data Types//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Data Types//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 word = "abcdefghijklmnopqrstuvwxyz"
 print(type(word))
 wow = 26526j
@@ -66,7 +67,7 @@ bb = bytes(56)
 print(type(bb))
 print(bb)
 
-#Numbers////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Numbers////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 x = -51313133131313265122222222222222222222222222222222222222222222222222222222222222222222222222222222
 print(x)
 x = 35e3
@@ -82,16 +83,15 @@ a = int(x)
 print(x, a)
 print(type(x), type(a))
 
-import random
 print(random.randrange(1, 9))
 
-#Casting////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Casting////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 x = int(1)
 y = int(2.8544)
 z = float("3.5")
 print(x, y, z)
 
-#Strings////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Strings////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 print("Hello")
 print('Hello')
 
@@ -117,7 +117,7 @@ print("free" in txt)
 
 txt = "The best things in life are ree!"
 if "free" in txt:
-  print("Yes, 'free' is present.")
+    print("Yes, 'free' is present.")
 else:
     print("NO")
 
@@ -149,63 +149,67 @@ a = " Hello, World! "
 print(a.strip())
 
 a = "H"
-print(a.replace("H","J"))
+print(a.replace("H", "J"))
 
 a = "Hello, World!"
 print(a.split(","))
 
-a="und"
-b="prkmf0"
-c=a+b
+a = "und"
+b = "prkmf0"
+c = a+b
 print(c)
 
 age = 36
 txt = "My name is John, and I am {}"
 print(txt.format(age))
 
-n=95
-m=45
-c="nrnvdok ieqmfc {1} l,wled, {0}"
+n = 95
+m = 45
+c = "nrnvdok ieqmfc {1} l,wled, {0}"
 print(c.format(n, m))
 
-n=95
-m=45
-c="nrnvdok ieqmfc {0} l,wled, {1}"
+n = 95
+m = 45
+c = "nrnvdok ieqmfc {0} l,wled, {1}"
 print(c.format(n, m))
 
-text="oiwnevo \niefiemi\" jwdjo"
+text = "oiwnevo \niefiemi\" jwdjo"
 print(text)
 
-#Booleans///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-print (10>9)
+# Booleans///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+print(10 > 9)
 
-if(10>5):
+if(10 > 5):
     print("Ten is bigger than five")
 
 print(bool("Hello"))
 print(bool(0))
 
-def myFunction() :
-  return True
+
+def myFunction():
+    return True
+
 
 print(myFunction())
 
-def myFunction() :
-  return True
+
+def myFunction():
+    return True
+
 
 if myFunction():
-  print("YES!")
+    print("YES!")
 else:
-  print("NO!")
+    print("NO!")
 
-#Operators//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Operators//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 print(10 / 4)
 print(10 // 4)
-print(not(10>5 and 10<51))
-a, b= 4, 5
+print(not(10 > 5 and 10 < 51))
+a, b = 4, 5
 print(a is b)
 
-#Lists//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Lists//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 list = ["apple", "banana", "cherry"]
 print(list)
 
@@ -224,10 +228,10 @@ print(thislist[:4])
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[2:])
 
-mylist=['a','b','c','d','e']
+mylist = ['a', 'b', 'c', 'd', 'e']
 if 'a' in mylist:
     print("Yes, \"a\" is in this list")
-mylist[2:4]="sdf","adv"
+mylist[2:4] = "sdf", "adv"
 print(mylist)
 
 thislist = ["apple", "banana", "cherry"]
@@ -238,9 +242,9 @@ thislist = ["apple", "banana", "cherry"]
 thislist[1:3] = ["watermelon"]
 print(thislist)
 
-a=['c','cd']
+a = ['c', 'cd']
 a.append("cdd")
-a.insert(1,'bbb')
+a.insert(1, 'bbb')
 a.remove("cd")
 a.pop(2)
 print(a)
@@ -250,21 +254,21 @@ del a
 
 thislist = ["apple", "banana", "cherry"]
 for x in thislist:
-  print(x)
+    print(x)
 
 thislist = ["apple", "banana", "cherry"]
 for i in range(len(thislist)):
     print(thislist[i])
 
-i=0
-while i<len(thislist):
+i = 0
+while i < len(thislist):
     print(thislist[i])
-    i=i+1
+    i = i+1
 
 [print(x) for x in thislist]
 
-animals =["mouse","dick","dog"]
-danimals=[]
+animals = ["mouse", "dick", "dog"]
+danimals = []
 for x in animals:
     if "d" in x:
         danimals.append(x)
@@ -273,15 +277,15 @@ print(danimals)
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = [x for x in fruits if "a" in x]
 print(newlist)
-nextlist=[i for i in fruits if i!="cherry"]
+nextlist = [i for i in fruits if i != "cherry"]
 print(nextlist)
 newlist1 = [x for x in range(10) if x < 5]
 print(newlist1)
-newlist2=[i.upper() for i in nextlist]
+newlist2 = [i.upper() for i in nextlist]
 print(newlist2)
-newlist3=["halo" for i in nextlist]
+newlist3 = ["halo" for i in nextlist]
 print(newlist3)
-newlist4=[x if x!=0 else "zero" for x in newlist1]
+newlist4 = [x if x != 0 else "zero" for x in newlist1]
 print(newlist4)
 
 thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
@@ -291,19 +295,24 @@ thislist = [100, 50, 65, 82, 23]
 thislist.sort()
 print(thislist)
 
+
 def myfunc(n):
-  return abs(n - 50)
+    return abs(n - 50)
+
+
 def myfunc1(n):
     return abs(n-82)
+
+
 thislist = [100, 50, 65, 82, 23]
-thislist1=[100, 50, 65, 82, 23]
-thislist.sort(key = myfunc)
-thislist1.sort(key = myfunc1)
+thislist1 = [100, 50, 65, 82, 23]
+thislist.sort(key=myfunc)
+thislist1.sort(key=myfunc1)
 print(thislist)
 print(thislist1)
 
-thislist = ["banana", "Orange", "Kiwi","Kawa","karavan","kawa", "cherry"]
-thislist.sort(key = str.lower)
+thislist = ["banana", "Orange", "Kiwi", "Kawa", "karavan", "kawa", "cherry"]
+thislist.sort(key=str.lower)
 print(thislist)
 
 thislist = ["banana", "Orange", "Kiwi", "cherry"]
@@ -319,15 +328,15 @@ list2 = [1, 2, 3]
 list2 = list1 + list2
 print(list2)
 
-#Tuples/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-mytuple=("apple","banana","banana","mango")
+# Tuples/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+mytuple = ("apple", "banana", "banana", "mango")
 print(mytuple)
 print(len(mytuple))
 
 thistuple = ("apple",)
 print(type(thistuple))
 
-#NOT a tuple
+# NOT a tuple
 thistuple = ("apple")
 print(type(thistuple))
 
@@ -343,7 +352,7 @@ print(thistuple[-1])
 thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
 print(thistuple[2:5])
 
-tup=("tractor","car","bike")
+tup = ("tractor", "car", "bike")
 if "bike" in tup:
     print("Yes, \"bike\" is in this tuple")
 
@@ -370,19 +379,19 @@ print(red)
 
 thistuple = ("apple", "banana", "cherry")
 for x in thistuple:
-  print(x)
+    print(x)
 
 thistuple = ("apple", "banana", "cherry")
 for i in range(len(thistuple)):
-  print(thistuple[i])
+    print(thistuple[i])
 
 thistuple = ("apple", "banana", "cherry")
 i = 0
 while i < len(thistuple):
-  print(thistuple[i])
-  i = i + 1
+    print(thistuple[i])
+    i = i + 1
 
-tuple1 = ("a", "b" , "c")
+tuple1 = ("a", "b", "c")
 tuple2 = (1, 2, 3)
 tuple3 = tuple1 + tuple2
 print(tuple3)
@@ -391,7 +400,7 @@ fruits = ("apple", "banana", "cherry")
 mytuple = fruits * 2
 print(mytuple)
 
-#Set////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Set////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 thisset = {"apple", "banana", "cherry", "apple"}
 print(thisset)
@@ -400,7 +409,7 @@ set1 = {"abc", 34, True, 40, "male"}
 print(set1)
 print(type(set1))
 
-thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
+thisset = set(("apple", "banana", "cherry"))  # note the double round-brackets
 print(thisset)
 for x in thisset:
     print(x)
@@ -426,51 +435,51 @@ print(thisset)
 thisset.pop()
 print(thisset)
 
-set1 = {"a", "b" , "c"}
+set1 = {"a", "b", "c"}
 set2 = {1, 2, 3}
 set3 = set1.union(set2)
 print(set3)
 
-set1 = {"a", "b" , "c"}
+set1 = {"a", "b", "c"}
 set2 = {1, 2, 3}
 set1.update(set2)
 print(set1)
 
-#Dictionaries///////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Dictionaries///////////////////////////////////////////////////////////////////////////////////////////////////////////
 thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
 }
 print(thisdict)
 
 thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964,
-  "year": 1965
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964,
+    "year": 1965
 }
 print(thisdict["year"])
 print(len(thisdict))
 
 thisdict = {
-  "brand": "Ford",
-  "electric": False,
-  "year": 1964,
-  "colors": ["red", "white", "blue"]
+    "brand": "Ford",
+    "electric": False,
+    "year": 1964,
+    "colors": ["red", "white", "blue"]
 }
 x = thisdict["colors"]
 x = thisdict.keys()
 print(x)
 print(thisdict)
 print(type(thisdict))
-thisdict = dict(name = "John", age = 36, country = "Norway")
+thisdict = dict(name="John", age=36, country="Norway")
 print(thisdict)
 
 car = {
-"brand": "Ford",
-"model": "Mustang",
-"year": 1964
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
 }
 x = car.values()
 print(x)
@@ -483,48 +492,48 @@ car["color"] = "white"
 print(x)
 
 thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
 }
 if "model" in thisdict:
-  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+    print("Yes, 'model' is one of the keys in the thisdict dictionary")
 
 thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
 }
 thisdict.update({"year": 2020})
 
 thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
 }
 thisdict.pop("model")
 print(thisdict)
 
 thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
 }
 thisdict.popitem()
 print(thisdict)
 
 for x in thisdict:
-  print(x)
+    print(x)
 for x in thisdict:
-  print(thisdict[x])
+    print(thisdict[x])
 
 for x, y in thisdict.items():
-  print(x, y)
+    print(x, y)
 
 thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
 }
 mydict = thisdict.copy()
 print(mydict)
@@ -533,72 +542,73 @@ mydict = dict(thisdict)
 print(mydict)
 
 myfamily = {
-  "child1" : {
-    "name" : "Emil",
-    "year" : 2004
-  },
-  "child2" : {
-    "name" : "Tobias",
-    "year" : 2007
-  },
-  "child3" : {
-    "name" : "Linus",
-    "year" : 2011
-  }
+    "child1": {
+        "name": "Emil",
+        "year": 2004
+    },
+    "child2": {
+        "name": "Tobias",
+        "year": 2007
+    },
+    "child3": {
+        "name": "Linus",
+        "year": 2011
+    }
 }
 print(myfamily)
 
 child1 = {
-  "name" : "Emil",
-  "year" : 2004
+    "name": "Emil",
+    "year": 2004
 }
 child2 = {
-  "name" : "Tobias",
-  "year" : 2007
+    "name": "Tobias",
+    "year": 2007
 }
 child3 = {
-  "name" : "Linus",
-  "year" : 2011
+    "name": "Linus",
+    "year": 2011
 }
 
 myfamily = {
-  "child1" : child1,
-  "child2" : child2,
-  "child3" : child3
+    "child1": child1,
+    "child2": child2,
+    "child3": child3
 }
 
-#If ...Else/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# If ...Else/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 a = 33
 b = 200
 if b > a:
-  print("b is greater than a")
+    print("b is greater than a")
 
 a = 33
 b = 33
 if b > a:
-  print("b is greater than a")
+    print("b is greater than a")
 elif a == b:
-  print("a and b are equal")
+    print("a and b are equal")
 
 a = 200
 b = 33
 if b > a:
-  print("b is greater than a")
+    print("b is greater than a")
 elif a == b:
-  print("a and b are equal")
+    print("a and b are equal")
 else:
-  print("a is greater than b")
+    print("a is greater than b")
 
-if a > b: print("a is greater than b")
+if a > b:
+    print("a is greater than b")
 a = 2
 b = 330
-print("A") if a>b else print("B")
-a=50
-b=50
-print("A") if a>b else print("B") if a<b else print("=")
+print("A") if a > b else print("B")
+a = 50
+b = 50
+print("A") if a > b else print("B") if a < b else print("=")
 
 a = 33
 b = 200
 if b > a:
-  pass
+    pass
