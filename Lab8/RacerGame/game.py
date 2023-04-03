@@ -65,6 +65,7 @@ baddieImage = pygame.image.load('image/car2.png')
 sample = [car3, car4, baddieImage]
 wallLeft = pygame.image.load('image/left.png')
 wallRight = pygame.image.load('image/right.png')
+coin = pygame.image.load('image/coin.png')
 
 
 # "Start" screen
@@ -76,7 +77,7 @@ zero=0
 if not os.path.exists("data/save.dat"):
     f = open("data/save.dat", 'w')
     f.write(str(zero))
-    f.close()   
+    f.close()
 v=open("data/save.dat", 'r')
 topScore = int(v.readline())
 v.close()
@@ -97,7 +98,7 @@ while (count>0):
         score += 1 # increase score
 
         for event in pygame.event.get():
-            
+
             if event.type == QUIT:
                 terminate()
 
@@ -126,7 +127,7 @@ while (count>0):
                     slowCheat = False
                 if event.key == K_ESCAPE:
                         terminate()
-            
+
 
                 if event.key == K_LEFT or event.key == ord('a'):
                     moveLeft = False
@@ -137,14 +138,14 @@ while (count>0):
                 if event.key == K_DOWN or event.key == ord('s'):
                     moveDown = False
 
-            
+
 
         # Add new baddies at the top of the screen
         if not reverseCheat and not slowCheat:
             baddieAddCounter += 1
         if baddieAddCounter == ADDNEWBADDIERATE:
             baddieAddCounter = 0
-            baddieSize =30 
+            baddieSize =30
             newBaddie = {'rect': pygame.Rect(random.randint(140, 485), 0 - baddieSize, 23, 47),
                         'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
                         'surface':pygame.transform.scale(random.choice(sample), (23, 47)),
@@ -160,8 +161,8 @@ while (count>0):
                        'surface':pygame.transform.scale(wallRight, (303, 599)),
                        }
             baddies.append(sideRight)
-            
-            
+
+
 
         # Move the player around.
         if moveLeft and playerRect.left > 0:
@@ -172,7 +173,7 @@ while (count>0):
             playerRect.move_ip(0, -1 * PLAYERMOVERATE)
         if moveDown and playerRect.bottom < WINDOWHEIGHT:
             playerRect.move_ip(0, PLAYERMOVERATE)
-        
+
         for b in baddies:
             if not reverseCheat and not slowCheat:
                 b['rect'].move_ip(0, b['speed'])
@@ -181,7 +182,7 @@ while (count>0):
             elif slowCheat:
                 b['rect'].move_ip(0, 1)
 
-         
+
         for b in baddies[:]:
             if b['rect'].top > WINDOWHEIGHT:
                 baddies.remove(b)
@@ -193,10 +194,10 @@ while (count>0):
         drawText('Score: %s' % (score), font, windowSurface, 128, 0)
         drawText('Top Score: %s' % (topScore), font, windowSurface,128, 20)
         drawText('Rest Life: %s' % (count), font, windowSurface,128, 40)
-        
+
         windowSurface.blit(playerImage, playerRect)
 
-        
+
         for b in baddies:
             windowSurface.blit(b['surface'], b['rect'])
 
