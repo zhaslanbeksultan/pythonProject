@@ -13,6 +13,8 @@ BADDIEMAXSPEED = 8
 ADDNEWBADDIERATE = 6
 PLAYERMOVERATE = 5
 count=3
+coinscore = 0
+s = 0
 
 def terminate():
     pygame.quit()
@@ -30,7 +32,7 @@ def waitForPlayerToPressKey():
 
 def playerHasHitBaddie(playerRect, baddies):
     for b in baddies:
-        if playerRect.colliderect(b['rect']):
+        if playerRect.colliderect(b['rect1']):
             return True
     return False
 
@@ -62,10 +64,10 @@ car3 = pygame.image.load('image/car3.png')
 car4 = pygame.image.load('image/car4.png')
 playerRect = playerImage.get_rect()
 baddieImage = pygame.image.load('image/car2.png')
-sample = [car3, car4, baddieImage]
+coin = pygame.image.load('image/coin.png')
+sample = [coin]
 wallLeft = pygame.image.load('image/left.png')
 wallRight = pygame.image.load('image/right.png')
-coin = pygame.image.load('image/coin.png')
 
 
 # "Start" screen
@@ -147,18 +149,21 @@ while (count>0):
             baddieAddCounter = 0
             baddieSize =30
             newBaddie = {'rect': pygame.Rect(random.randint(140, 485), 0 - baddieSize, 23, 47),
-                        'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
-                        'surface':pygame.transform.scale(random.choice(sample), (23, 47)),
+                         'rect1': pygame.Rect(random.randint(140, 485), 0 - baddieSize, 33, 40),
+                         'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
+                         'surface': pygame.transform.scale(random.choice(sample), (23, 47)),
                         }
             baddies.append(newBaddie)
             sideLeft= {'rect': pygame.Rect(0,0,126,600),
+                       'rect1': pygame.Rect(0, 0, 126, 600),
                        'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
                        'surface':pygame.transform.scale(wallLeft, (126, 599)),
                        }
             baddies.append(sideLeft)
             sideRight= {'rect': pygame.Rect(497,0,303,600),
-                       'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
-                       'surface':pygame.transform.scale(wallRight, (303, 599)),
+                        'rect1': pygame.Rect(497, 0, 303, 600),
+                        'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
+                        'surface':pygame.transform.scale(wallRight, (303, 599)),
                        }
             baddies.append(sideRight)
 
@@ -176,41 +181,39 @@ while (count>0):
 
         for b in baddies:
             if not reverseCheat and not slowCheat:
-                b['rect'].move_ip(0, b['speed'])
+                b['rect1'].move_ip(0, b['speed'])
             elif reverseCheat:
-                b['rect'].move_ip(0, -5)
+                b['rect1'].move_ip(0, -5)
             elif slowCheat:
-                b['rect'].move_ip(0, 1)
+                b['rect1'].move_ip(0, 1)
 
 
         for b in baddies[:]:
             if b['rect'].top > WINDOWHEIGHT:
+                baddies.remove(b)
+            if b['rect1'].top > WINDOWHEIGHT:
                 baddies.remove(b)
 
         # Draw the game world on the window.
         windowSurface.fill(BACKGROUNDCOLOR)
 
         # Draw the score and top score.
-        drawText('Score: %s' % (score), font, windowSurface, 128, 0)
-        drawText('Top Score: %s' % (topScore), font, windowSurface,128, 20)
+        drawText('Score: %s' % (s), font, windowSurface, 128, 0)
         drawText('Rest Life: %s' % (count), font, windowSurface,128, 40)
 
         windowSurface.blit(playerImage, playerRect)
 
 
         for b in baddies:
-            windowSurface.blit(b['surface'], b['rect'])
+            windowSurface.blit(b['surface'], b['rect1'])
 
         pygame.display.update()
 
         # Check if any of the car have hit the player.
         if playerHasHitBaddie(playerRect, baddies):
-            if score > topScore:
-                g=open("data/save.dat",'w')
-                g.write(str(score))
-                g.close()
-                topScore = score
-            break
+            coinscore+=1
+            if coinscore%23==0 or coinscore%22==0 or coinscore%24==0:
+                s+=1
 
         mainClock.tick(FPS)
 
@@ -220,11 +223,11 @@ while (count>0):
     gameOverSound.play()
     time.sleep(1)
     if (count==0):
-     laugh.play()
-     drawText('Game over', font, windowSurface, (WINDOWWIDTH / 3), (WINDOWHEIGHT / 3))
-     drawText('Press any key to play again.', font, windowSurface, (WINDOWWIDTH / 3) - 80, (WINDOWHEIGHT / 3) + 30)
-     pygame.display.update()
-     time.sleep(2)
-     waitForPlayerToPressKey()
-     count=3
-     gameOverSound.stop()
+        laugh.play()
+        drawText('Game over', font, windowSurface, (WINDOWWIDTH / 3), (WINDOWHEIGHT / 3))
+        drawText('Press any key to play again.', font, windowSurface, (WINDOWWIDTH / 3) - 80, (WINDOWHEIGHT / 3) + 30)
+        pygame.display.update()
+        time.sleep(2)
+        waitForPlayerToPressKey()
+        count=3
+        gameOverSound.stop()
