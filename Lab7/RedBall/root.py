@@ -8,7 +8,7 @@ x = 400
 y = 300
 m = 20
 def draw_ball():
-    pygame.draw.circle(screen, 'red', (x, y), 25)
+    pygame.draw.circle(screen, 'blue', (x, y), 50)
 
 check = True
 while check:

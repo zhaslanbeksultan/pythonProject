@@ -20,8 +20,8 @@ while check:
     minutes_angle = (minutes / 60) * 360
     seconds_angle = (seconds / 60) * 360
 
-    h1_rotated = pygame.transform.rotate(h1, -minutes_angle)
-    h2_rotated = pygame.transform.rotate(h2, -seconds_angle)
+    h1_rotated = pygame.transform.rotate(h1, -45-minutes_angle)
+    h2_rotated = pygame.transform.rotate(h2, -45-seconds_angle)
 
     window.blit(base, (0, 0))
 
