@@ -20,6 +20,7 @@ pygame.display.set_caption('Snake')
 clock = pygame.time.Clock()
 
 # Initial length of a snake
+global level
 snake_block = 10
 level = 1
 score = 0
@@ -183,6 +184,7 @@ def gameLoop():
     y1_change = 0
 
     # Speed, Length, level of a snake
+    global snake_speed
     snake_speed = 10
     snake_List = []
     Length_of_snake = 1
